@@ -1,0 +1,16 @@
+#graph {
+    width: 75vw;
+    height: 75vh;
+    border-style: solid;
+    border-color: darkgray;
+    display: flex;
+    align-items: flex-end;
+    gap: 1%;
+}
+
+.graphBar {
+    background-color: steelblue;
+    border-color: black;
+    border-style: solid;
+    box-sizing: border-box;
+}
