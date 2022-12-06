@@ -5,7 +5,6 @@
     border-color: darkgray;
     display: flex;
     align-items: flex-end;
-    gap: 1%;
 }
 
 .graphBar {
