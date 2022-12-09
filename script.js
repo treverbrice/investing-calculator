@@ -28,11 +28,16 @@ function graphValues(values) {
     const maxValueHeader = document.getElementById("maxValueHeader");
     maxValueHeader.textContent = `\$${maxValue} after ${values.length - 1} years`;
 
-    for(const value of values){
+    for(const [index, value] of values.entries()){
         const newValue = document.createElement("div");
         const height = ((value / maxValue) * 100);
-        newValue.setAttribute("style", `width:${width}%; height:${height}%; margin-right:${width/10}`);
+        newValue.setAttribute("style", `width:${width}%; height:${height}%; margin-right:${width/10}%`);
         newValue.classList.add("graphBar");
+        newValue.dataset.year = index;
+        newValue.dataset.value = value;
+        newValue.onmouseover = function() {
+            document.getElementById("valueDisplay").textContent = `\$${newValue.dataset.value} after ${newValue.dataset.year} years`;
+        };
 
         graphDiv.appendChild(newValue);
     }
